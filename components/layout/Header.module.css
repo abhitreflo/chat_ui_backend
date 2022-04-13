@@ -1,0 +1,8 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 20px auto;
+    font: 500 3rem 'Roboto';
+    color: white;
+}

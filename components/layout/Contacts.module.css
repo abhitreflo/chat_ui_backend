@@ -1,0 +1,26 @@
+.contacts {
+    margin: 10px 20px 10px 20px;
+    align-items: center;
+    position: relative;
+    border: none;
+}
+
+.contact_btn {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+.name {
+    font: 400 1.2rem 'Roboto';
+    color: white;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.name:hover {
+    background-color: rgba(70, 68, 68, 0.726);
+    transform: translateX(-5px);
+    color: #fff;
+}
