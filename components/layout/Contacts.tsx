@@ -1,7 +1,7 @@
 import styles from './Contacts.module.css';
 
-function ContactSide({ id, name }) {
-    const onClick = (e) => {
+function ContactSide({ id,name}:any ) {
+    const onClick = (e:any) => {
         console.log(e.target.textContent);
     };
 

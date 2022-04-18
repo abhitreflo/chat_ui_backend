@@ -13,6 +13,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     font: 300 1.4rem 'Roboto';
+    font-weight: bold;
     border-bottom: 1px dotted rgba(0, 0, 0, 0.589);
 }
 
@@ -28,6 +29,7 @@
     flex-direction: row;
     margin-bottom: 4px;
     margin-left: 3px;
+
 }
 
 .type_input {
@@ -37,10 +39,14 @@
     align-items: center;
     border-radius: 20px;
     border: 0.1px solid black;
+    padding-left: 15px;
 }
 
 .send_btn {
     border: none;
+    background-color: rgb(106, 192, 239);
+    margin:2px;
+    border-radius:5px;
 }
 
 .image {

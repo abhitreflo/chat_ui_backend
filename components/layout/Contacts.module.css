@@ -9,6 +9,7 @@
     width: 100%;
     background-color: transparent;
     border: none;
+    border-bottom: 1px solid white;
 }
 
 .name {
@@ -17,6 +18,7 @@
     padding: 1.5rem;
     cursor: pointer;
     transition: all 1s;
+
 }
 
 .name:hover {
