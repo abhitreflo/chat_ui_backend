@@ -11,6 +11,15 @@ import { Dummy_Data_Search } from '../components/data/dummy_data';
 import CancelIcon from '@mui/icons-material/Cancel';
 import SearchIcon from '@mui/icons-material/Search';
 
+
+
+var createHost=require('cross-domain-storage/host')
+
+
+
+var createGuest = require('cross-domain-storage/guest')
+
+
 function HomePage() {
     let search=''
     const [channel,setChannel]=useState('Channel_1')
@@ -29,7 +38,25 @@ function HomePage() {
         //console.log('focus',focus)
     },[focus]) */
 
+    useEffect(() => {
+        var storageHost = createHost([
     
+            {
+                origin: 'https://chat-ui-backend.vercel.app/',
+                allowedMethods: ['get', 'set', 'remove'],
+            },
+            {
+                origin: 'https://whosapp-auth.vercel.app/chat',
+                allowedMethods: ['get','set','remove'],
+            },
+        ])
+
+        var bazStorage = createGuest('https://whosapp-auth.vercel.app/chat')
+        bazStorage.get('Backendless', function(error:any, value:any) {
+    // value for the key of 'fizz' will be retrieved from localStorage on www.baz.com
+        console.log(value)
+});
+    },[])
     return (
         <Fragment>
             <div className={styles.background}>
