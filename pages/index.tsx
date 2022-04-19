@@ -13,6 +13,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 function HomePage() {
     let search=''
+    const [channel,setChannel]=useState('Channel_1')
     const [searchWord,setSearchWord]=useState('')
     const [contacts,setContacts] = useState(Dummy_Data)
     const my_ref=useRef<any>(null)
@@ -48,7 +49,7 @@ function HomePage() {
                                 autoComplete="off"
                                 id={'searchWord'}
                                 value={searchWord}
-                                placeholder="Search Your Friend..."
+                                placeholder="Search Your Channel..."
                                 onChange={(e)=>{
                                     setSearchWord(e.target.value)
                                     if(e.target.value!='')
@@ -65,6 +66,7 @@ function HomePage() {
                             />
                             <button title={"search"} type="submit" className={styles.search_btn}
                             onClick={(e)=>{
+                                console.log('pressed')
                                 e.preventDefault()
                                 if(focus===true)
                                 {
@@ -88,12 +90,21 @@ function HomePage() {
                             </button>
                             </form>
                         </div>
+
+
+
                         <div className={styles.all_contacts}>
+                            {focus?<div>Press enter to cancel search</div>:<></>}
                             {contacts.length>0?contacts.map((item) => (
+                                
+                                
+                                
                                 <ContactSide
                                     key={item.id}
                                     id={item.id}
                                     name={item.name}
+                                    setChannel={setChannel}
+                                    channel={channel}
                                 />
                             ))
                             :
@@ -101,7 +112,7 @@ function HomePage() {
                         </div>
                     </div>
                     <div className={styles.chat}>
-                        <ChatSide channel={"mihir1"} />
+                        <ChatSide channel={channel}  />
                     </div>
                 </div>
             </div>

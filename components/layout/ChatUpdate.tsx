@@ -1,4 +1,5 @@
 import React from 'react'
+import GetChat from './GetChat'
 
 interface objectProps{
     message: string,
@@ -18,7 +19,7 @@ function ChatUpdate(object:objectProps) {
         //console.log("hello")
         console.log("savingMessage...")
 
-        Backendless.Data.of( "mihir1" ).save( object )
+        Backendless.Data.of( object.message_channel ).save( object )
         .then( function( savedObject ) {
             console.log("data_saved",savedObject)
         })
@@ -30,18 +31,20 @@ function ChatUpdate(object:objectProps) {
 
         console.log("checking for new Messages...")
 
-        const personTableRT = Backendless.Data.of( 'mihir1' ).rt();
+        /* GetChat() */
+
+        /* const personTableRT = Backendless.Data.of( 'mihir1' ).rt();
 
         const onObjectCreate = (object: object) => console.log( 'Object has been created in the table', object);
         
         const onError = (error:any) => console.log( 'An error has occurred in update-', error);
 
-        personTableRT.addCreateListener( onObjectCreate, onError )
-
-        return true
+        setTimeout(personTableRT.addCreateListener( onObjectCreate, onError ),500)
+*/
+        return true 
     }
     catch( err ) {
-        console.log("error in chatupdate")
+        console.log("error in chat update")
         return false
     }
 }

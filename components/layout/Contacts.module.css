@@ -21,6 +21,17 @@
 
 }
 
+.name_active{
+    font: 400 1.2rem 'Roboto';
+    color: rgb(28, 28, 186);
+    background-color:white;
+    font-weight: bold;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 1s;
+
+}
+
 .name:hover {
     background-color: rgba(70, 68, 68, 0.726);
     transform: translateX(-5px);

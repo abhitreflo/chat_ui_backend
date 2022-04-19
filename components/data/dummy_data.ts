@@ -1,10 +1,22 @@
 const Dummy_Data = [
-    { id: 1, name: 'Mihir1' },
-    { id: 2, name: 'Abhi1' },
-    { id: 3, name: 'Test1' },
-    { id: 4, name: 'Mihir2' },
-    { id: 5, name: 'Abhi2' },
-    { id: 6, name: 'Test2' },
+    { id: 1, name: 'Channel_1' },
+    { id: 2, name: 'Channel_2' },
+    { id: 3, name: 'Channel_3' },
+    { id: 4, name: 'Channel_4' },
+    { id: 5, name: 'Channel_5' },
+    { id: 6, name: 'Channel_6' },
+    { id: 7, name: 'Channel_7' },
+    { id: 8, name: 'Channel_8' },
+    { id: 9, name: 'Channel_9' },
+    { id: 10, name:'Channel_10' },
+    /* { id: 11, name: 'e Channel_11' },
+    { id: 12, name: 'f Channel 12' },
+    { id: 13, name: 'g Channel 13' },
+    { id: 14, name: 'h Channel 14' },
+    { id: 15, name: 'i Channel 15' },
+    { id: 16, name: 'j Channel 16' },
+    { id: 17, name: 'k Channel 17' }, */
+
 ];
 
 export default Dummy_Data;

@@ -15,10 +15,22 @@
     font: 300 1.4rem 'Roboto';
     font-weight: bold;
     border-bottom: 1px dotted rgba(0, 0, 0, 0.589);
+    background-color: rgb(224, 13, 13);
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+.chat_body_chat_instructions{
+    display: flex;
+    font-size:14px;
+    align-items: center;
 }
 
 .chat_body {
     height: 85%;
+    overflow:scroll;
 }
 
 .chat_typing {
