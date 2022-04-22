@@ -32,7 +32,29 @@
 
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    padding:8%;
+    justify-content:space-around;
+    text-align: center;
+    align-items:center;
+    color:white;
+    font-size:25px;
+    font-weight: bold;
+  }
+  .auth_container_2 {
+    width: 90%;
+    height: 80%;
+    
+    position: relative;
+    top: calc(10vh );
+    left: calc(5vw );
+    background-color: #4a516277;
+    border-radius: 24px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 68%);
+
+    display: flex;
+    flex-direction: column;
+    padding:8%;
+    justify-content:space-around;
     text-align: center;
     align-items:center;
     color:white;
@@ -131,4 +153,9 @@
     border-radius: 10px;
     border:none;
     box-shadow:  2px 5px  rgba(62, 2, 2, 0.5);
+}
+
+.loading{
+    position:relative;
+    top:-50%;
 }

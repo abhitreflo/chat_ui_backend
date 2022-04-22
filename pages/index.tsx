@@ -12,9 +12,12 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import SearchIcon from "@mui/icons-material/Search";
 import { style } from "@mui/system";
 import Image from "next/image";
-import { Button } from "@mui/material";
+import { Button, Skeleton } from "@mui/material";
 import router from "next/router";
-let loadingGif = require("../assets/sad_giphy2.webp")
+import Loading from '../components/loading/loading'
+
+let loadingGif = require("../assets/loadinggif.gif")
+let sadGif = require("../assets/sad_giphy2.webp")
 var createHost = require("cross-domain-storage/host");
 
 var createGuest = require("cross-domain-storage/guest");
@@ -85,7 +88,7 @@ function HomePage() {
   }, [v, load]);
 
   useEffect(()=>{
-    console.log(v)
+    //console.log(v)
   },[v])
 
   const funload = () => {
@@ -95,7 +98,7 @@ function HomePage() {
       if (error) {
         console.log(error);
       } else {
-        console.log(value);
+        //console.log(value);
         value = JSON.parse(value);
         console.log('value:"',value,'"')
         if (value===null)
@@ -105,7 +108,7 @@ function HomePage() {
         }
         else{
           value.loading = false;
-        console.log(value);
+        //console.log(value);
         //console.log(typeof value)
         setv(value);
         //setvname(JSON. parse(value).name)
@@ -120,8 +123,29 @@ function HomePage() {
   };
   //setCheckGuest(false);
 
-  if (v.loading ===true){
-    return (<div>loading...</div>)
+  if (v.loading ===true ){
+    return (<div className={styles.background}>
+      <div className={styles.auth_container_2}>
+        {/* <div >You are not logged in! </div> */}
+        {/* <Image src={loadingGif} alt={'sad_face'} width="500" height="255"></Image> */}
+        <Skeleton variant="rectangular" animation="pulse" width={'100%'} height={'100%'} >
+         </Skeleton> 
+         {/* <div className={styles.loading}>Loading...</div> */}
+         <Loading></Loading>
+          
+        {/* <div>Please Login to Chat</div>
+        <Button className={styles.button}
+        variant="contained"
+      
+        color="error"
+        onClick={() => {
+          router.replace("https://whosapp-auth.vercel.app/");
+        }}>Login</Button> */}
+        
+      </div>
+
+    </div>
+    )
   }
   else if (v.stayLoggedIn === false) {
     console.log("Please login")
@@ -130,19 +154,21 @@ function HomePage() {
       <div className={styles.background}>
         <div className={styles.auth_container}>
           <div >You are not logged in! </div>
-          <Image src={loadingGif} alt={'sad_face'} width="100%" height="100%"></Image>
+          <Image src={sadGif} alt={'sad_face'} width="100%" height="100%"></Image>
           <div>Please Login to Chat</div>
-          <Button variant="contained"
-        className={styles.button}
-        color="error"
-        onClick={() => {
-          router.replace("https://whosapp-auth.vercel.app/");
-        }}>Login</Button>
+          <Button className={styles.button}
+          variant="contained"
+        
+          color="error"
+          onClick={() => {
+            router.replace("https://whosapp-auth.vercel.app/");
+          }}>Login</Button>
         </div>
 
       </div>
     )
-  } else {
+  } 
+  
     return (
       <Fragment>
         <div className={styles.background}>
@@ -239,7 +265,7 @@ function HomePage() {
         </div>
       </Fragment>
     );
-  }
+  
 }
 
 export default HomePage;
