@@ -1,60 +1,57 @@
-.message_body{
-    background-color:white;
-    margin:8px;
-    display: flex;
-    flex-direction: row;
-    min-height: 60px;
-    width: 75%;
-    /* overflow-wrap: break-word; */
-    word-break: break-word;
-    z-index: -10;
-    overflow-x: hidden;
+.message_body {
+  background-color: white;
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  min-height: 60px;
+  width: 75%;
+  /* overflow-wrap: break-word; */
+  word-break: break-word;
+  z-index: -10;
+  overflow-x: hidden;
 }
 
-.message_sender{
-    font-size: 10px;
-    z-index: 2;
-    padding-top: 5px;
-    padding-bottom: 8px;
-
+.message_details {
+  font-size: 10px;
+  z-index: 2;
+  padding-top: 5px;
+  padding-bottom: 8px;
 }
 
-.message_receiver{
-    font-size: 10px;
-    z-index: 2;
-    padding-bottom: 5px;
-    padding-top: 8px;
+.message {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  align-items: center;
+  background-color: rgb(254, 254, 160);
+  /* text-overflow: wrap; */
+  padding: 15px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  width: 100%;
+  margin-left: 0%;
+  z-index: 1;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.message{
-    display: flex;
-    justify-content:center;
-    font-weight: bold;
-    align-items:center;
-    background-color:rgb(254, 254, 160);
-    /* text-overflow: wrap; */
-    padding:15px;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    width: 100%;
-    margin-left:0%;
-    z-index: 1;
-    padding-top:24px;
-    padding-bottom:24px;
-    padding-left:10px;
-    padding-right:10px;
-}
-.column{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    width:20%;
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 30%;
 }
 
-.date{
-
-    font-size: 10px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  padding-left: 5%;
+  width: 90%;
+}
+.message_bold {
+  font-weight: bold;
 }
