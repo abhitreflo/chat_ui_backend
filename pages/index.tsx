@@ -100,7 +100,7 @@ function HomePage() {
       } else {
         //console.log(value);
         value = JSON.parse(value);
-        console.log('value:"',value,'"')
+        //console.log('value:"',value,'"')
         if (value===null)
         { setv({...v,loading:false})
           

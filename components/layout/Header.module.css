@@ -54,3 +54,9 @@
 .Button {
     background-color: black;
   }
+
+@media screen and (max-width:900px) {
+    .header{
+        display: none;
+    }    
+}

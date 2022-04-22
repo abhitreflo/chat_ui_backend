@@ -11,7 +11,7 @@ function Header({username}:headerProps) {
   return (
     <div className={styles.row}>
       <div className={styles.username}>Welcome, {username}</div>
-      <div className={styles.header}>WhosApp</div>
+      {<div className={styles.header}>WhosApp</div>}
 
       <Button
         variant="contained"
