@@ -54,7 +54,7 @@ const res=useCallback(async ()=>{
         }); */
 
         res()
-    }, 500);
+    }, 50);
   }, [channel,res]);
 
   useEffect(() => {
@@ -152,7 +152,7 @@ const res=useCallback(async ()=>{
 
     setTimeout(() => {
       set_chat_text("");
-    }, 250);
+    }, 50);
   };
 
   const clickHandler = () => {

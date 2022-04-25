@@ -24,11 +24,7 @@ const ChatText = ({ channel, message, pubOpsProps }: chatProps) => {
     Backendless.Messaging.publish(channel, message, pubOps)
       .then(function (response) {})
       .catch(function (error) {});
-    //console.log("published changes");
-    //console.log("pubOps:", pubOps);
-    //console.log("pubOps.heaDERS:", pubOps.headers);
-    //console.log("new date:", new Date());
-
+    
     ChatUpdate({
       message: message,
       message_sender: pubOpsProps?.sender,

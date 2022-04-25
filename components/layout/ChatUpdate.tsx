@@ -28,7 +28,7 @@ function ChatUpdate(object: objectProps) {
         .catch(function (error) {
           console.log("error", error);
         });
-    }, 500);
+    }, 50);
 
     //console.log("checking for new Messages...");
 
