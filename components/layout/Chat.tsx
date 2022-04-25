@@ -20,7 +20,7 @@ function ChatSide({ channel, username }: chat_channel_props) {
   const [sub, setSub] = useState(true);
   const [messageId, setMessageId] = useState("");
   const [result, setResult] = useState<any>([]);
-  const chat_update = useCallback(() => {
+ /*  const chat_update = useCallback(() => {
     ChatUpdate({
       message: messageObject?.message,
       message_sender: messageObject?.headers.sender,
@@ -28,7 +28,7 @@ function ChatSide({ channel, username }: chat_channel_props) {
       message_receiver: messageObject?.headers.receiver,
       message_channel: messageObject?.headers.channel,
     });
-  }, [messageObject]);
+  }, [messageObject]); */
 
   useEffect(() => {
     setTimeout(() => {
@@ -83,7 +83,7 @@ function ChatSide({ channel, username }: chat_channel_props) {
           });
       }, 500);
     }
-  }, [channel, messageId, chat_update, messageObject]);
+  }, [channel, messageId, /* chat_update, */ messageObject]);
 
   useEffect(() => {
     if (sub) {
