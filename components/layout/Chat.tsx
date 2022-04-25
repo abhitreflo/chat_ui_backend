@@ -63,7 +63,7 @@ function ChatSide({ channel, username }: chat_channel_props) {
 
   useEffect(() => {
     if (messageObject && messageId != messageObject.messageId) {
-      setTimeout(chat_update, 300);
+      /* setTimeout(chat_update, 300); */
       setSub(true);
       setMessageId(messageObject.messageId);
 

@@ -3,9 +3,9 @@ import GetChat from "./GetChat";
 
 interface objectProps {
   message: string;
-  message_sender: string;
-  message_timestamp: string;
-  message_receiver: string;
+  message_sender?: string;
+  message_timestamp?: number;
+  message_receiver?: string;
   message_channel: string;
 }
 
