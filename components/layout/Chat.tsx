@@ -30,12 +30,13 @@ function ChatSide({ channel, username }: chat_channel_props) {
       message_channel: messageObject?.headers.channel,
     });
   }, [messageObject]); */
-const res=async ()=>{
+const res=useCallback(async ()=>{
           const {data} = await axios(`https://api.backendless.com/0F12B69E-DAB8-64B1-FF04-5629AD521700/D0E9777B-0A5C-4894-8FD3-E92F69AE4D51/data/${channel}?pageSize=100&property=message&property=message_channel&property=message_sender&property=message_timestamp&sortBy=%60created%60%20asc`);
           console.log('response',data)
           setResult(data);
           return data
-       }
+       },[channel])
+
   useEffect(() => {
     setTimeout(() => {
       /* Backendless.Data.of(channel)
@@ -54,15 +55,16 @@ const res=async ()=>{
 
         res()
     }, 500);
-  }, [channel]);
+  }, [channel,res]);
 
   useEffect(() => {
     if (sub) {
-      setSub(false);
+      setSub(true);
       var subchannel = Backendless.Messaging.subscribe(channel);
 
       subchannel.addMessageListener(onMessage);
     }
+
     function onMessage(pubsubmessage: object) {
       setMessageObject(pubsubmessage);
       setSub(false);
@@ -75,7 +77,7 @@ const res=async ()=>{
       setSub(true);
       setMessageId(messageObject.messageId);
 
-      setTimeout(() => {
+      /* setTimeout(() => {
         Backendless.Data.of(channel)
           .find()
           .then(function (result) {
@@ -89,24 +91,26 @@ const res=async ()=>{
           .catch(function (error) {
             return false;
           });
-      }, 500);
+      }, 500); */
+      res()
     }
-  }, [channel, messageId, /* chat_update, */ messageObject]);
+  }, [channel, messageId, res,/* chat_update, */ messageObject]);
 
   useEffect(() => {
     if (sub) {
-      setSub(false);
+      /* setSub(false); */
       var subchannel = Backendless.Messaging.subscribe(channel);
 
       subchannel.addMessageListener(onMessage);
     }
+
     function onMessage(pubsubmessage: object) {
       setMessageObject(pubsubmessage);
       setSub(false);
     }
 
     {
-      Backendless.Data.of(channel)
+     /*  Backendless.Data.of(channel)
         .find()
         .then(function (result) {
           result.sort(function (x: any, y: any) {
@@ -119,9 +123,10 @@ const res=async ()=>{
         .catch(function (error) {
           console.log("error in get chat", error);
           return false;
-        });
+        }); */
+        res()
     }
-  }, [channel, sub]);
+  }, [channel, sub,res]);
 
   const submitHandler = (e: any) => {
     console.log(chat_text, "submitted");

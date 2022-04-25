@@ -20,7 +20,7 @@ const ChatText: (i: messageProps) => ReactElement<any, any> = (
     var d = new Date(timeEpoch);
     var utc = d.getTime() + d.getTimezoneOffset() * 60000;
     var nd = new Date(utc + 3600000 * offset);
-    const datetime = nd.toLocaleString().split(', ');
+    const datetime = nd.toLocaleString().split(", ");
 
     return (
       <div className={stylestext.column}>
@@ -28,9 +28,7 @@ const ChatText: (i: messageProps) => ReactElement<any, any> = (
           <div className={stylestext.row}>
             <div>
               date:
-              <div className={stylestext.message_bold}>
-                {datetime[0]}
-              </div>
+              <div className={stylestext.message_bold}>{datetime[0]}</div>
             </div>
           </div>
         </div>
@@ -39,9 +37,7 @@ const ChatText: (i: messageProps) => ReactElement<any, any> = (
           <div className={stylestext.row}>
             <div>
               time:
-              <div className={stylestext.message_bold}>
-                {datetime[1]}
-              </div>
+              <div className={stylestext.message_bold}>{datetime[1]}</div>
             </div>
           </div>
         </div>
@@ -52,7 +48,7 @@ const ChatText: (i: messageProps) => ReactElement<any, any> = (
   return (
     <div>
       {r &&
-        r.map((i: any,index:any) => {
+        r.map((i: any, index: any) => {
           return (
             <div className={stylestext.message_body} key={index}>
               <div className={stylestext.column}>
