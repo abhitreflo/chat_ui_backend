@@ -1,71 +1,67 @@
 @keyframes txtLoading {
-    0% {
-      letter-spacing: 0.em;
-      transform: translateY(0);
-      text-shadow: none;
-    }
-  
-    100% {
-      letter-spacing: 0em;
-      transform: translateY(-20px);
-      
-    }
+  0% {
+    letter-spacing: 0.2em;
+    transform: translateY(5px);
+    text-shadow: none;
   }
-  @keyframes logoLoading {
-    0% {
-      transform: translateY(30px);
-      filter: drop-shadow(5rem 0rem 0 rgb(168, 5, 141)) 
-                drop-shadow(-5rem 0rem 0 rgb(247, 239, 7))
-                ;
-      opacity: 1;
-    }
-  
-    100% {
-      transform: translateY(-0px);
-      filter: drop-shadow(0px 5px 4px rgb(71, 5, 60)) 
-      drop-shadow(0px 5px 4px rgb(26, 173, 63));
-      opacity: 1;
-    }
+
+  100% {
+    letter-spacing: 0em;
+    transform: translateY(-5px);
   }
-  .loading_bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 999;
-    background: rgba(#000, 0.8);}
+}
 
-    .loadBody {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -25%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 10em;}
+@keyframes logoLoading {
+  0% {
+    transform: translateY(20px);
+    filter: drop-shadow(5rem 0rem 0 rgb(255, 255, 255))
+      drop-shadow(-5rem 0rem 0 rgb(255, 255, 255))
+      drop-shadow(0rem -5rem 0 rgb(255, 255, 255))
+      drop-shadow(0rem 5rem 0 rgb(255, 255, 255));
+    opacity: 1;
+  }
 
-      .logoSlot {
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        animation: logoLoading 1s ease-in-out infinite alternate;
-        background: rgb(45, 9, 142);
-         /* border: #000 solid 0.5px; */
-         
-         box-shadow: 0 1px 1px #000;
+  100% {
+    transform: translateY(-0px);
+    filter: drop-shadow(0px 0px 0px #dc0b07) drop-shadow(0px 0px 0px #1aad3f)
+      drop-shadow(0px 0px 0px #d4ff00) drop-shadow(0px 0px 0px #68077e);
+    opacity: 0.5;
+  }
+}
+.loading_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
 
-      }
+.loadBody {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10em;
+}
 
-      .loadTxt {
-        margin-top: 50px;
-        font-size: 30px;
-        color: #fff;
-        /* transform-origin: 2.5% 5%; */
-  
-        animation: txtLoading 1s ease-in-out infinite alternate;
-        font-weight: bold;
-        
-      }
-  
+.logoSlot {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  animation: logoLoading 0.6s ease-in-out infinite alternate;
+  background: rgb(40, 2, 145);
+}
+
+.loadTxt {
+  margin-top: 130px;
+  font-size: 30px;
+  color: #fff;
+  transform-origin: 2.5% 5%;
+
+  animation: txtLoading 0.6s ease-in-out infinite alternate;
+  font-weight: bold;
+}

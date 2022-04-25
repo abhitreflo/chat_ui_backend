@@ -1,11 +1,11 @@
 import { createStore, Store } from 'redux';
 import { createWrapper, Context } from 'next-redux-wrapper';
-import { userState } from './reducers/userReducer';
-import userReducer from './reducers/userReducer';
+import { channelState } from './reducers/channelReducer';
+import channelReducer from './reducers/channelReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const makeStore = (context: Context) =>
-    createStore(userReducer, composeWithDevTools());
-export const wrapper = createWrapper<Store<userState>>(makeStore, {
+    createStore(channelReducer, composeWithDevTools());
+export const wrapper = createWrapper<Store<channelState>>(makeStore, {
     debug: false,
 });

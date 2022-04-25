@@ -1,6 +1,6 @@
 import React from "react";
 
-interface chatprops {
+interface chatProps {
   channel: string;
   message: string;
   pubOpsProps?: {
@@ -11,9 +11,7 @@ interface chatprops {
   };
 }
 
-const ChatText = ({ channel, message, pubOpsProps }: chatprops) => {
-  /* var channel = "default",
-    message = "Hello, world!"; */
+const ChatText = ({ channel, message, pubOpsProps }: chatProps) => {
   const pubOps = new Backendless.PublishOptions({
     headers: {
       sender: pubOpsProps?.sender,
@@ -25,7 +23,6 @@ const ChatText = ({ channel, message, pubOpsProps }: chatprops) => {
     Backendless.Messaging.publish(channel, message, pubOps)
       .then(function (response) {})
       .catch(function (error) {});
-    //console.log("hello")
     return true;
   } catch (err) {
     console.log("error in chatpub");

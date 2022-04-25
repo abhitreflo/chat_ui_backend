@@ -1,5 +1,4 @@
 import styles from "./Header.module.css";
-//import Router from 'next/router'
 import { useRouter } from "next/router";
 import { Button } from "@mui/material";
 interface headerProps{
@@ -11,7 +10,7 @@ function Header({username}:headerProps) {
   return (
     <div className={styles.row}>
       <div className={styles.username}>Welcome, {username}</div>
-      {<div className={styles.header}>WhosApp</div>}
+      <div className={styles.header}>WhosApp</div>
 
       <Button
         variant="contained"

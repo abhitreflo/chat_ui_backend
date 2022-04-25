@@ -1,44 +1,44 @@
-import { userConstant } from '../constants/userConstants';
+import { channelConstant } from '../constants/channelConstants';
 import { HYDRATE } from 'next-redux-wrapper';
 import { AnyAction } from 'redux';
 
-export interface userState {
+export interface channelState {
     loading: boolean;
     error: string | null;
     data: string[];
 }
 
-const initialState: userState = {
+const initialState: channelState = {
     loading: false,
     error: null,
     data: [],
 };
 
-const userReducer = (
-    state: userState = initialState,
+const channelReducer = (
+    state: channelState = initialState,
     action: AnyAction
-): userState => {
+): channelState => {
     switch (action.type) {
         case HYDRATE:
             return {
                 ...state,
                 ...action.payload,
             };
-        case userConstant.ALL_USERS_REQUEST:
+        case channelConstant.CHANNEL_REQUEST:
             return {
                 ...state,
                 loading: true,
                 error: null,
                 data: [],
             };
-        case userConstant.ALL_USERS_SUCCESS:
+        case channelConstant.CHANNEL_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 error: null,
                 data: action.payload,
             };
-        case userConstant.ALL_USERS_FAIL:
+        case channelConstant.CHANNEL_FAIL:
             return {
                 ...state,
                 loading: false,
@@ -50,4 +50,4 @@ const userReducer = (
     }
 };
 
-export default userReducer;
+export default channelReducer;

@@ -5,9 +5,6 @@ interface chatprops {
 }
 
 const ChatText = ({ channel }: chatprops) => {
-  /* var channel = "default",
-    message = "Hello, world!"; */
-
   var subchannel = Backendless.Messaging.subscribe(channel);
 
   function onMessage(message: Object) {
@@ -15,7 +12,7 @@ const ChatText = ({ channel }: chatprops) => {
   }
   try {
     subchannel.addMessageListener(onMessage);
-    //console.log("hello")
+
     return true;
   } catch (err) {
     console.log("error in chatsub");
