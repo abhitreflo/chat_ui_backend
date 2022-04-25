@@ -54,7 +54,7 @@ const res=useCallback(async ()=>{
         }); */
 
         res()
-    }, 500);
+    }, 50);
   }, [channel,res]);
 
   useEffect(() => {
