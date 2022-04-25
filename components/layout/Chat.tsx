@@ -1,5 +1,5 @@
 import styles from "./Chat.module.css";
-import SendImg from "../images/send.png";
+import SendImg from "../images/send3.png";
 import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import ChatTextPub from "./ChatTextPub";

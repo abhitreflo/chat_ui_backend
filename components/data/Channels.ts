@@ -11,12 +11,14 @@ const Channels = [
 ];
 
 export default Channels;
-
+function containsAnyLetter(str:string) {
+  return /[a-zA-Z0-9]/.test(str);
+}
 export const Channels_Search = (word: any) => {
   let x = Channels.filter((i: any) => {
     return (
       i.name.toLowerCase().startsWith(word.toLowerCase()) ||
-      i.name.toLowerCase().includes(word.toLowerCase())
+      i.name.toLowerCase().includes(word.toLowerCase()) 
     );
   });
 
