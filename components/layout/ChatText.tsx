@@ -2,6 +2,7 @@ import React, { Fragment, ReactElement } from "react";
 import stylestext from "./ChatText.module.css";
 interface messageProps {
   result?: any;
+  username?:string,
   message?: string;
   message_timestamp?: string;
   message_sender?: string;
@@ -13,6 +14,7 @@ const ChatText: (i: messageProps) => ReactElement<any, any> = (
   i: messageProps
 ) => {
   const r = i.result;
+  const username=i.username;
 
   const timesec = (props: string) => {
     var offset = 5.5;
@@ -50,7 +52,8 @@ const ChatText: (i: messageProps) => ReactElement<any, any> = (
       {r &&
         r.map((i: any, index: any) => {
           return (
-            <div className={stylestext.message_body} key={index}>
+            /* {username===i?.message_sender?} */
+            <div className={username===i?.message_sender?stylestext.message_body_sender:stylestext.message_body} key={index}>
               <div className={stylestext.column}>
                 <div className={stylestext.message_details}>
                   <div className={stylestext.row}>

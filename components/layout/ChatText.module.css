@@ -10,6 +10,19 @@
   z-index: -10;
   overflow-x: hidden;
 }
+.message_body_sender {
+  background-color: white;
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  min-height: 60px;
+  width: 75%;
+  margin-left: 25%;
+  /* overflow-wrap: break-word; */
+  word-break: break-word;
+  z-index: -10;
+  overflow-x: hidden;
+}
 
 .message_details {
   font-size: 10px;

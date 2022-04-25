@@ -184,7 +184,7 @@ const res=useCallback(async ()=>{
       </div>
 
       <div className={styles.chat_body}>
-        <ChatText result={result} />
+        <ChatText result={result} username={username}/>
         <div ref={messagesEndRef} />
       </div>
 
