@@ -19,14 +19,14 @@ function ChatUpdate(object: objectProps) {
     //console.log("hello")
     console.log("savingMessage...");
 
-    Backendless.Data.of(object.message_channel)
+    setTimeout(()=>{Backendless.Data.of(object.message_channel)
       .save(object)
       .then(function (savedObject) {
         console.log("data_saved", savedObject);
       })
       .catch(function (error) {
         console.log("error", error);
-      });
+      })},500)
 
     //console.log("checking for new Messages...");
 

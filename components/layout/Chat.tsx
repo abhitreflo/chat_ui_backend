@@ -3,10 +3,11 @@ import SendImg from "../images/send.png";
 import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import ChatTextPub from "./ChatTextPub";
-import ChatUpdate from "./ChatUpdate";
+//import ChatUpdate from "./ChatUpdate";
 import ChatText from "./ChatText";
 
 import { Button } from "@mui/material";
+import axios from "axios";
 
 interface chat_channel_props {
   channel: string;
@@ -29,10 +30,15 @@ function ChatSide({ channel, username }: chat_channel_props) {
       message_channel: messageObject?.headers.channel,
     });
   }, [messageObject]); */
-
+const res=async ()=>{
+          const {data} = await axios(`https://api.backendless.com/0F12B69E-DAB8-64B1-FF04-5629AD521700/D0E9777B-0A5C-4894-8FD3-E92F69AE4D51/data/${channel}?pageSize=100&property=message&property=message_channel&property=message_sender&property=message_timestamp&sortBy=%60created%60%20asc`);
+          console.log('response',data)
+          setResult(data);
+          return data
+       }
   useEffect(() => {
     setTimeout(() => {
-      Backendless.Data.of(channel)
+      /* Backendless.Data.of(channel)
         .find()
         .then(function (result) {
           result.sort(function (x: any, y: any) {
@@ -44,7 +50,9 @@ function ChatSide({ channel, username }: chat_channel_props) {
         .catch(function (error) {
           console.log("error in get chat", error);
           return false;
-        });
+        }); */
+
+        res()
     }, 500);
   }, [channel]);
 

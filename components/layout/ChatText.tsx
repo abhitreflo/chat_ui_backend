@@ -52,9 +52,9 @@ const ChatText: (i: messageProps) => ReactElement<any, any> = (
   return (
     <div>
       {r &&
-        r.map((i: any) => {
+        r.map((i: any,index:any) => {
           return (
-            <div className={stylestext.message_body} key={i?.objectId}>
+            <div className={stylestext.message_body} key={index}>
               <div className={stylestext.column}>
                 <div className={stylestext.message_details}>
                   <div className={stylestext.row}>
