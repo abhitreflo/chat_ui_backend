@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 function ContactSide({ id, name, setChannel, channel }: any) {
   const onClick = (e: any) => {
-    console.log(e.target.textContent);
+    //console.log(e.target.textContent);
     setChannel(e.target.textContent);
   };
 

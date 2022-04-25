@@ -8,7 +8,7 @@ const ChatText = ({ channel }: chatprops) => {
   var subchannel = Backendless.Messaging.subscribe(channel);
 
   function onMessage(message: Object) {
-    console.log("Message received in chatsub: " + message);
+    //console.log("Message received in chatsub: " + message);
   }
   try {
     subchannel.addMessageListener(onMessage);

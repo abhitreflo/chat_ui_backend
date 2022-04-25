@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 function GetChat() {
-  console.log("GetChat");
+  //console.log("GetChat");
   Backendless.Data.of("mihir1")
     .find()
     .then(function (result) {
-      console.log("result", result);
+      //console.log("result", result);
       return result;
     })
     .catch(function (error) {

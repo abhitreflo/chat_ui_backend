@@ -32,7 +32,7 @@ function ChatSide({ channel, username }: chat_channel_props) {
   }, [messageObject]); */
 const res=useCallback(async ()=>{
           const {data} = await axios(`https://api.backendless.com/0F12B69E-DAB8-64B1-FF04-5629AD521700/D0E9777B-0A5C-4894-8FD3-E92F69AE4D51/data/${channel}?pageSize=100&property=message&property=message_channel&property=message_sender&property=message_timestamp&sortBy=%60created%60%20asc`);
-          console.log('response',data)
+          //console.log('response',data)
           setResult(data);
           return data
        },[channel])
@@ -129,11 +129,11 @@ const res=useCallback(async ()=>{
   }, [channel, sub,res]);
 
   const submitHandler = (e: any) => {
-    console.log(chat_text, "submitted");
+    //console.log(chat_text, "submitted");
     e.preventDefault();
     if (chat_text === "") {
       console.log("Empty message cannot be sent!:(");
-      console.log("returning...");
+      //console.log("returning...");
       return;
     }
     ChatTextPub({
@@ -156,10 +156,10 @@ const res=useCallback(async ()=>{
   };
 
   const clickHandler = () => {
-    console.log("clicked");
-    if (inputRef?.current?.value != "") {
+    //console.log("clicked");
+    /* if (inputRef?.current?.value != "") {
       console.log(inputRef?.current?.value);
-    }
+    } */
   };
 
   const messagesEndRef = useRef<null | HTMLDivElement>(null);

@@ -23,7 +23,7 @@ function ChatUpdate(object: objectProps) {
       Backendless.Data.of(object.message_channel)
         .save(object)
         .then(function (savedObject) {
-          console.log("data_saved", savedObject);
+          //console.log("data_saved", savedObject);
         })
         .catch(function (error) {
           console.log("error", error);
